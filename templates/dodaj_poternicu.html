@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="content">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h1>Unesite krivicno delo</h1>
+                <form class="forma-poternica" action="/poternica_dodaj/{{ id }}" method="POST">
+                    <input name="krivicno_delo">
+                    <input type="submit" value="Raspisite poternicu">
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

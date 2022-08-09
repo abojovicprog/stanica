@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="content">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <div class="admin-leva">
+                    <h1>Dodavanje korisnika</h1>
+                    <br>
+                    <form action="{{ url_for('dodaj_login') }}" method="POST">
+                        <label for="username">Korisnicko ime</label>
+                        <input class="input" type="text" name="username">
+                        <br>
+                        <br>
+                        <label for="password">Lozinka</label>
+                        <input class="input" type="text" name="password">
+                        <br>
+                        <br>
+                        <label>Admin</label>
+                        <input class="checkbox" type="checkbox" name="admin">
+                        <br>
+                        <br>
+                        <input class="submit-button" style="width: 150px;" type="submit" value="Dodaj korisnika" name="Prijava">
+                    </form>
+                <div class="admin-desna">
+
+                </div>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

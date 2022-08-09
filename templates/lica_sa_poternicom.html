@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<h1 style="text-align: center;">Spisak lica sa raspisanom poternicom</h1>
+        {% for lice in poternica %}
+        <div class="container">
+        <div class="stavka_lista">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="{{ lice.link_slike }}" class="fotografija_spisak">
+                </div>
+                <div class="col-md-2">
+                    <pre class="podaci_spisak">Ime:  {{ lice.ime }}</pre>    
+                </div>
+                <div class="col-md-2">
+                    <pre class="podaci_spisak">Prezime:  {{ lice.prezime }}</pre>    
+                </div>
+                <div class="col-md-2">
+                    <pre class="podaci_spisak">Rodjen:  {{ lice.datum_rodjenja }}</pre>
+                </div>
+                <div class="col-md-2">
+                    <pre class="podaci_delo">{{ lice.krivicno_delo }}</pre>
+                </div>
+                <div class="col-md-2">
+                    <form action="/repr/{{ lice.jmbg }}" method="POST">  
+                        <input type="image" src="/static/content/lupa.png" name="jmbg">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+        {% endfor %}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Unesite JMBG osobe za brisanje</h1>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="jmbg">
+                <p>JMBG:</p>
+                <form action="{{ url_for('brisanje') }}" method="POST">
+                    <input class="input" type="text" name="trazeni_jmbg" id="trazeni_jmbg" value="">
+                    <input class="submit-button" type="submit" value="Pretraga">
+                </form>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+{% endblock %}

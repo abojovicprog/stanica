@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <h1 style="text-align: center; margin-right: 30px;">Pretraga lica</h1>
+        <div class="row">
+            <div class="col-md-5">
+
+            </div>
+            <div class="col-md-2">
+                    <div class="ime">
+                        <p>Unesite ime i prezime</p>
+                        <form action="{{ url_for('pretraga_po_imenu_dodaj') }}" method="POST">
+                                <input type="text" name="trazeno_ime" id="content">
+                                <input type="text" placeholder="{{ jmbg }}" id="jmbg" name="jmbg" value="{{ jmbg }}" hidden>
+                                <input class = "submit-button" type="submit" value="Pretraga">
+                        </form>
+                    </div>
+            </div>
+            <div class="col-md-5">
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

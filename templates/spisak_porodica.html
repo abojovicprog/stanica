@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<h1 style="text-align: center;">Spisak lica</h1>
+        {% for lice in lica %}
+        <div class="container">
+        <div class="stavka_lista">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="{{ lice.link_slike }}" class="fotografija_spisak">
+                </div>
+                <div class="col-md-2">
+                    <pre class="podaci_spisak">Ime:  {{ lice.ime }}</pre>    
+                </div>
+                <div class="col-md-2">
+                    <pre class="podaci_spisak">Prezime:  {{ lice.prezime }}</pre>    
+                </div>
+                <div class="col-md-2">
+                    <pre class="podaci_spisak">JMBG:  {{ lice.jmbg }}</pre>
+                </div>
+                <div class="col-md-4">
+                    <form action="{{ url_for('dodaj_porodicu') }}" method="POST">
+                        <input name="jmbg_lica" value="{{ jmbg }}" hidden>
+                        <input name="jmbg_porodica" value="{{ lice.jmbg }}" hidden>
+                        <button class="submit-button" style="margin-top: 110px; margin-right: 100px;" type="submit">Dodaj</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+        {% endfor %}
+{% endblock %}

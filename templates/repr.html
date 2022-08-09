@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <div class="container">
+        {% if poternica %}
+            <h1 class="poternica">Za ovim licem postoji aktivna poternica</h1>
+        {% endif %}
+        <div class="row">
+            <div class="col-md-3">
+                <img class="fotografija" src="{{ link_slike }}">
+            </div>
+            <div class="col-md-4">
+                <table>
+                    <tr>
+                        <th>Ime: </th>
+                        <td class="podaci">{{ ime }}</td>
+                    </tr>
+                    <tr>
+                        <th>Prezime:</th>
+                        <td class="podaci">{{ prezime }}</td>
+                    </tr>
+                    <tr>
+                        <th>Datum rodjenja:</th>
+                        <td class="podaci">{{ datum_rodjenja }}</td>
+                    </tr>
+                    <tr>
+                        <th>JMBG:</th>
+                        <td class="podaci">{{ jmbg }}</td>
+                    </tr>
+                    <tr>
+                        <th>Broj L.K.:</th>
+                        <td class="podaci">{{ brojlk }}</td>
+                    </tr>
+                    <tr>
+                        <th>Pol:</th>
+                        <td class="podaci">{{ pol }}</td>
+                    </tr>
+                    <tr>
+                        <th>Mesto rodjenja:</th>
+                        <td class="podaci">{{ mesto_rodjenja }}</td>
+                    </tr>
+                    <tr>
+                        <th>Prebivaliste</th>
+                        <td class="podaci">{{ prebivaliste }}</td>
+                    </tr>
+                    <tr>
+                        <th>Datum izrade l.k.</th>
+                        <td class="podaci">{{ datum_lk }}</td>
+                    </tr>
+                    <tr>
+                        <th>Datum isteka l.k.</th>
+                        <td class="podaci">{{ datum_isteka_lk }}</td>
+                    </tr>
+                </table>  
+            </div>
+        </div>
+        <form action="/obrisi/{{ jmbg }}">
+            <button class="repr_dugme">Obrisite podatke o ovoj osobi</button>
+        </form>
+        {% if poternica %}
+            <form action="/poternica_ukloni/{{ id }}">
+                <button class="repr_dugme" >Uklonite sa spiska lica sa poternicom</button>
+            </form>
+        {% else %}
+            <form action="/unos_dela/{{ id }}">
+                <button class="repr_dugme" >Dodajte na spisak lica sa poternicom</button>
+            </form>
+        {% endif %}
+    </div>
+    <form action="{{ url_for('pretrazi_ime', jmbg=jmbg) }}">
+        <button class="repr_dugme" >Dodajte clana porodice</button>
+    </form>
+    <form action="{{ url_for('spisak_porodica', porodica=porodica) }}">
+        <button class="repr_dugme" >Pogledajte clanove porodice</button>
+    </form>
+
+</div>
+{% endblock %}

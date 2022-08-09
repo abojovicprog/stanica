@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="leva">
+                <a href="/pretraga">Pretraga baze</a>
+                <br>
+                <a href="/novo_lice">Dodaj lice</a>
+                <br>
+                <a href="/poternica_spisak">Lica sa poternicom</a>
+                {% if admin == True %}
+                <br>
+                <a href="/admin">Admin stranica</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="desna">
+                <img src="/static/content/fbi_headquarters.jpg" alt="">
+            </div>
+        </div>
+        
+    </div> 
+</div>
+{% endblock %}

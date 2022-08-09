@@ -1,0 +1,39 @@
+{% extends 'repr.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<h1 class="brisanje_tekst">Da li ste sigurni da zelite da obriste podatke o licu?</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <img class="fotografija" src="{{ link_slike }}">
+        </div>
+        <div class="col-md-6">
+            <table>
+                <tr>
+                    <th>Ime: </th>
+                    <td class="podaci">{{ ime }}</td>
+                </tr>
+                <tr>
+                    <th>Prezime:</th>
+                    <td class="podaci">{{ prezime }}</td>
+                </tr>
+                <tr>
+                    <th>Datum rodjenja:</th>
+                    <td class="podaci">{{ datum_rodjenja }}</td>
+                </tr>
+                <tr>
+                    <th>JMBG:</th>
+                    <td class="podaci">{{ jmbg }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-3">
+
+        </div>
+    </div>
+    <input type="button" name="jmbg_za_brisanje" class="brisanje_dugme" action="/brisanje" value="{{ jmbg }}"></input>
+</div>
+{% endblock %}

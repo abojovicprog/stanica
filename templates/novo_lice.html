@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="content">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="naziv">
+                    <h1>Unos podataka</h1>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+                    <form class="myForm" action="/dodaj" method="POST">
+                        <label for="ime">Ime </label>
+                        <input type="text" maxlength="250" name="ime" id="ime" required>
+                        <br>
+                        <label for="prezime">Prezime </label>
+                        <input type="text" maxlength="250" name="prezime" id="prezime" required>
+                        <br>
+                        <label for="datum">Datum rodjenja </label>
+                        <input type="date" name="datum" id="datum" required>
+                        <br>
+                        <label for="jmbg">JMBG </label>
+                        <input type="text" alt="vsdvv" oninvalid="this.setCustomValidity('JMBG mora imati 13 cifara')" maxlength="13" minlength="13" name="jmbg" id="jmbg" required>
+                        <br>
+                        <label for="brojlk">Broj L.K. </label>
+                        <input type="text" oninvalid="this.setCustomValidity('Broj L.K. mora imati 9 cifara')" minlength="9" maxlength="9" name="brojlk" id="brojlk" required>
+                        <br>
+                        <label for="pol">Pol </label>
+                        <select name="pol" list="polovi" id="pol" oninvalid="this.setCustomValidity('Molimo da izaberete neku od ponudjenih opcija')"required>
+                            <datalist>
+                                <option ></option>
+                                <option value="M">M</option>
+                                <option value="Z">Z</option>
+                            </datalist>
+                        </select>
+                        <br>
+                        <label for="mesto_rodjenja">Mesto rodjenja </label>
+                        <input type="text" maxlength="250" name="mesto_rodjenja" id="mesto_rodjenja" required>
+                        <br>
+                        <label for="prebivaliste">Prebivaliste </label>
+                        <input type="text" maxlength="250" name="prebivaliste" id="prebivaliste" required>
+                        <br>
+                        <label for="link_slike">Link slike</label>
+                        <input type="text" maxlength="250" name="link_slike" id="link_slike" required>
+                        <br>
+                        <input class="submit-button" type="submit" value="Potvrdi" required>
+                      </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

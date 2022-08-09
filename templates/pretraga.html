@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <h1 style="text-align: center; margin-right: 30px;">Pretraga lica</h1>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+                <div class="jmbg">
+                    <p>JMBG:</p>
+                    <form action="{{ url_for('pretrazi_po_jmbg') }}" method="POST">
+                        <input class="input" type="text" name="trazeni_jmbg" id="trazeni_jmbg" value="">
+                        <input class = "submit-button" type="submit" value="Pretraga">
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="brojlk">
+                    <p>Broj L.K.</p>
+                    <form action="{{ url_for('pretrazi_po_brojlk') }}" method="POST">
+                            <input class="input" type="text" name="trazeni_brojlk" id="content">
+                            <input class = "submit-button" type="submit" value="Pretraga">
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="ime">
+                    <p>Ime</p>
+                    <form action="{{ url_for('pretraga_po_imenu') }}" method="POST">
+                            <input class="input" type="text" name="trazeno_ime" id="content">
+                            <input class = "submit-button" type="submit" value="Pretraga">
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+{% endblock %}
